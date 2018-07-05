@@ -31,6 +31,11 @@ const counterReducer = (state = initialState, action) => {
   }
 }
 
+const add = num => ({
+  type: ADD,
+  num
+})
+
 // Store
 const store = createStore(counterReducer)
 
@@ -45,6 +50,6 @@ store.dispatch({ type: INCREMENT_COUNTER })
 
 // console.log(store.getState())
 
-store.dispatch({ type: ADD, num: 10 })
+store.dispatch(add(10))
 
 // console.log(store.getState())
